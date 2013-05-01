@@ -9,3 +9,38 @@ if (typeof jQuery == 'undefined') {
     s.parentNode.insertBefore(wf, s);    */        
 }
 
+
+$(document).ready(function() {
+    
+    /*
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'audio.mp3');
+    audioElement.setAttribute('autoplay', 'autoplay');
+    //audioElement.load()
+    $.get();
+    audioElement.addEventListener("load", function() {
+        audioElement.play();
+    }, true);
+
+    $('.play').click(function() {
+    audioElement.trigger('play');
+    });
+    
+    
+    $('.pause').click(function() {
+    audioElement.pause();
+    });
+
+
+    */
+    
+    var audioElement = $('#hotpockets')
+    audioElement.trigger('play');
+    
+    $('#shutup').click(function() {
+        audioElement.trigger('pause');
+    });
+   
+
+
+});
