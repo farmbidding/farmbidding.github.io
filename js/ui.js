@@ -66,6 +66,7 @@ $(document).ready(function() {
                 $(audioElement).trigger('play');
                 msg.html("stop")
             }
+            playing = !playing;
         } else {
             ellipses(msg);
             
