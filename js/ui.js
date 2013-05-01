@@ -83,8 +83,8 @@ $(document).ready(function() {
                 function () {
                     loaded = true;
                     //alert("loaded");
-                    msg.html("play")
-
+                    msg.html("stop")
+                    playing = true;
                 }
             
             );
