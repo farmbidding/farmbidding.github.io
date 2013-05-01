@@ -10,6 +10,12 @@ if (typeof jQuery == 'undefined') {
 }
 
 
+String.prototype.repeat = function( num )
+{
+    return new Array( num + 1 ).join( this );
+}
+
+
 $(document).ready(function() {
     
     /*
@@ -34,12 +40,59 @@ $(document).ready(function() {
 
     */
     
-    var audioElement = $('#hotpockets')
-    audioElement.trigger('play');
+    var audioElement;       // = $('#hotpockets');
+    var loaded = false;
+    var n = 0;
+    
+    function ellipses(tgt) {
+        if (loaded) return;
+        
+        tgt.html("Buffering" + ".".repeat(n++));
+        if (n > 3) n = 0;
+        window.setTimeout(ellipses, 500,tgt);
+        
+    }
+    
+    function attachAudio(){
+        var msg = $("#shutup");
+        
+        if (audioElement) {
+            msg.html("stop")
+            audioElement.trigger('play');
+        } else {
+            ellipses(msg);
+            
+            audioElement = document.createElement('audio');
+            audioElement.setAttribute('src', 'media/Wewillhotpockets.mp3');
+            audioElement.setAttribute('loop', 'loop');
+            
+            //audioElement.load()
+            $.get();
+            audioElement.addEventListener("load", function() {
+                audioElement.play();
+            }, true);
+        
+            $('.play').click(function() {
+            audioElement.trigger('play');
+            });
+            
+            
+            $('.pause').click(function() {
+            audioElement.pause();
+            });  
+        }
+    }
+    
+    //audioElement.trigger('play');
     
     $('#shutup').click(function() {
         audioElement.trigger('pause');
+        $("#shutup").html('');
     });
+    
+    $('#start').click(function() {
+        audioElement.trigger('play');
+    });    
    
 
 

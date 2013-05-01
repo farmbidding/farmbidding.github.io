@@ -59,6 +59,8 @@ p {
 	-webkit-border-radius:  4px;
 	border-radius:          4px;
 	color:                  #ffffff;
+    cursor:                 hand;
+    cursor:                 pointer;
     display:                inline-block;
 	font-family:            'Headland One','Arial Black', sans-serif;
 	font-size:              120%;
