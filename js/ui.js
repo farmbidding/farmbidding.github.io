@@ -47,11 +47,12 @@ $(document).ready(function() {
     
     function ellipses(tgt) {
         if (loaded) return;
-        
-        tgt.html("Buffering" + ".".repeat(n++));
-        if (n > 3) n = 0;
-        window.setTimeout(ellipses, 500,tgt);
-        
+        else {
+            
+            tgt.html("Buffering" + ".".repeat(n++));
+            if (n > 3) n = 0;
+            window.setTimeout(ellipses, 500,tgt);
+        }
     }
     
     function attachAudio(){
@@ -78,7 +79,7 @@ $(document).ready(function() {
             //audioElement.load()
             $.get();
             
-            audioElement.on("loadeddata", 
+            $(audioElement).on("loadeddata", 
                 function () {
                     loaded = true;
                 }
