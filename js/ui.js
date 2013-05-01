@@ -43,6 +43,7 @@ $(document).ready(function() {
     var audioElement;       // = $('#hotpockets');
     var loaded = false;
     var n = 0;
+    var playing = false;
     
     function ellipses(tgt) {
         if (loaded) return;
@@ -54,11 +55,17 @@ $(document).ready(function() {
     }
     
     function attachAudio(){
-        var msg = $("#shutup");
+        var msg = $("#start");
         
         if (audioElement) {
-            msg.html("stop")
-            audioElement.trigger('play');
+            if (playing) {
+                msg.html("play")
+                audioElement.trigger('stop');
+            } else {
+                msg.html("play")
+                audioElement.trigger('play');
+                
+            }
         } else {
             ellipses(msg);
             
@@ -70,9 +77,16 @@ $(document).ready(function() {
             
             //audioElement.load()
             $.get();
-            audioElement.addEventListener("load", function() {
-                audioElement.play();
-            }, true);
+            
+            audioElement.on("loadeddata", 
+                function () {
+                    loaded = true;
+                }
+            
+            );
+            //audioElement.addEventListener("load", function() {
+            //    audioElement.play();
+            //}, true);
         
             $('.play').click(function() {
             audioElement.trigger('play');
@@ -94,7 +108,7 @@ $(document).ready(function() {
     
     $('#start').click(function() {
         //audioElement.trigger('play');
-        attachAudio()
+        attachAudio();
     });    
    
 
