@@ -63,7 +63,6 @@ $(document).ready(function() {
                 msg.html("play")
                 audioElement.trigger('stop');
             } else {
-                msg.html("play")
                 audioElement.trigger('play');
                 
             }
@@ -82,7 +81,9 @@ $(document).ready(function() {
             $(audioElement).on("loadeddata", 
                 function () {
                     loaded = true;
-                    alert("loaded");
+                    //alert("loaded");
+                    msg.html("play")
+
                 }
             
             );
@@ -104,12 +105,12 @@ $(document).ready(function() {
     //audioElement.trigger('play');
     
     $('#shutup').click(function() {
-        audioElement.trigger('pause');
+        $(audioElement).trigger('pause');
         $("#shutup").html('');
     });
     
     $('#start').click(function() {
-        //audioElement.trigger('play');
+        $(audioElement).trigger('play');
         attachAudio();
     });    
    
