@@ -63,7 +63,7 @@ $(document).ready(function() {
                 msg.html("play")
                 $(audioElement).trigger('stop');
             } else {
-                $(audioElement).trigger('play');
+                $(audioElement).trigger('pause');
                 msg.html("stop")
             }
             playing = !playing;
