@@ -1,0 +1,47 @@
+
+/*
+    tag styles
+*/
+
+body {
+    color:                  #000;   
+    font-family:            Cutive,'Arial Black', sans-serif;    
+    font-size:              12pt;
+}
+
+h1, h2 {
+    color:                  #333;
+    font-family:            'Headland One','Arial Black', sans-serif;
+    font-size:              200%;    
+    font-weight:            bold;
+    line-height:            120%;
+    margin:                 0 auto 0.1em auto;
+    text-align:             center;
+    text-shadow:            2px 2px 0 rgba(0,0,0,0.1); 
+}
+
+h1 {
+    font-variant:           small-caps;
+}
+
+h2 {
+    text-transform:         uppercase;
+}
+
+h3 {
+    font-family:            Cutive,Arial, Arial, Helvetica, sans-serif;
+    font-size:              110%;
+    font-weight:            bold;
+    line-height:            140%;
+    margin:                 1em auto 0.5em auto;
+    text-align:             center;    
+    width:                  90%;
+}
+
+p {
+    font-family:            'Cutive',Arial, Arial, Helvetica, sans-serif;
+    line-height:            120%;
+    margin:                 0.25em auto;
+    text-align:             center;    
+    width:                  98%;
+}
