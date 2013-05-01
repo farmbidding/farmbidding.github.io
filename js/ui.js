@@ -65,6 +65,7 @@ $(document).ready(function() {
             audioElement = document.createElement('audio');
             audioElement.setAttribute('src', 'media/Wewillhotpockets.mp3');
             audioElement.setAttribute('loop', 'loop');
+            audioElement.setAttribute('autoplay', 'autoplay');
             
             //audioElement.load()
             $.get();
