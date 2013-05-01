@@ -61,9 +61,9 @@ $(document).ready(function() {
         if (audioElement) {
             if (playing) {
                 msg.html("play")
-                $(audioElement).trigger('stop');
-            } else {
                 $(audioElement).trigger('pause');
+            } else {
+                $(audioElement).trigger('play');
                 msg.html("stop")
             }
             playing = !playing;
