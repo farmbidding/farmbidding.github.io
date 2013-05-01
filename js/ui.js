@@ -82,6 +82,7 @@ $(document).ready(function() {
             $(audioElement).on("loadeddata", 
                 function () {
                     loaded = true;
+                    alert("loaded");
                 }
             
             );
@@ -90,12 +91,12 @@ $(document).ready(function() {
             //}, true);
         
             $('.play').click(function() {
-            audioElement.trigger('play');
+                $(audioElement).trigger('play');
             });
             
             
             $('.pause').click(function() {
-            audioElement.pause();
+                $(audioElement).pause();
             });  
         }
     }
