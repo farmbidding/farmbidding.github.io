@@ -91,7 +91,8 @@ $(document).ready(function() {
     });
     
     $('#start').click(function() {
-        audioElement.trigger('play');
+        //audioElement.trigger('play');
+        attachAudio()
     });    
    
 
