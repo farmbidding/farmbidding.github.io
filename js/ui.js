@@ -61,10 +61,10 @@ $(document).ready(function() {
         if (audioElement) {
             if (playing) {
                 msg.html("play")
-                audioElement.trigger('stop');
+                $(audioElement).trigger('stop');
             } else {
-                audioElement.trigger('play');
-                
+                $(audioElement).trigger('play');
+                msg.html("stop")
             }
         } else {
             ellipses(msg);
