@@ -43,13 +43,13 @@ h3 {
     font-size:              125%;
     font-weight:            bold;
     line-height:            140%;
-    margin:                 0.75em 0 0.2em 0.2em;
+    margin:                 0.75em 0 0.4em 0.2em;
     text-align:             left;    
     width:                  90%;
 }
 
 p {
-    line-height:            120%;
+    line-height:            160%;
     margin:                 0.25em 0 0.25em 0.5em;
     text-align:             center;    
     text-align:             justify;
@@ -104,5 +104,9 @@ a sup {
 
 a   {
     text-decoration:        none;
+}
+
+#footnotes {
+    line-height:            160%;
 }
 
