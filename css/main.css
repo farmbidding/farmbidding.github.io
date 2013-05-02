@@ -9,6 +9,7 @@ body {
     font-size:              12pt;
     margin:                 0 auto;
     max-width:              800px;
+    
     width:                  80%;
 }
 
@@ -28,7 +29,7 @@ h1 {
 h2 {
     color:                  #333;
     font-family:            'Headland One','Arial Black', sans-serif;
-    font-size:              200%;    
+    font-size:              150%;    
     font-weight:            bold;
     line-height:            120%;
     margin:                 0.5em auto 0.2em auto;
@@ -38,24 +39,39 @@ h2 {
 }
 
 h3 {
-    font-family:            Cutive,Arial, Arial, Helvetica, sans-serif;
-    font-size:              110%;
+    font-family:            'Headland One',Arial, Arial, Helvetica, sans-serif;
+    font-size:              125%;
     font-weight:            bold;
     line-height:            140%;
-    margin:                 0.5em auto 0.2em auto;
-    text-align:             center;    
+    margin:                 0.5em 0 0.2em 0.2em;
+    text-align:             left;    
     width:                  90%;
 }
 
 p {
-    font-family:            'Cutive',Arial, Arial, Helvetica, sans-serif;
     line-height:            120%;
-    margin:                 0.25em auto;
+    margin:                 0.25em 0 0.25em 0.5em;
     text-align:             center;    
+    text-align:             justify;
     width:                  98%;
 }
 
-#shutup {
+div.shutup {
+    font-family:            'Headland One','Arial Black', sans-serif;
+	font-size:              120%;
+	font-weight:            bold;
+    letter-spacing:         2px;
+    line-height:            200%;
+    margin:                 1em 0;
+    
+
+    clear:                  both;
+    display:                inline-block;
+    text-align:             center;
+    width:                  100%;
+}
+
+span.shutup {
     /*
     -moz-box-shadow:        inset 0px 1px 0px 0px #C95D13;
     -webkit-box-shadow:     inset 0px 1px 0px 0px #C95D13;
@@ -69,18 +85,24 @@ p {
     -moz-border-radius:     4px;
 	-webkit-border-radius:  4px;
 	border-radius:          4px;
-    clear:                  both;
-	color:                  #ffffff;
+	color:                  #000;
     cursor:                 hand;
     cursor:                 pointer;
     display:                inline;
-	font-family:            'Headland One','Arial Black', sans-serif;
-	font-size:              120%;
-	font-weight:            bold;
-    letter-spacing:         2px;
     margin:                 1em auto;
 	padding:                6px 24px;
 	text-decoration:        none;
 	text-shadow:            2px 2px 3px #333;    
+}
+
+a sup {
+    font-size:              70%;
+    text-decoration:        none;
+    vertical-align:         super;
+}
+
+
+a   {
+    text-decoration:        none;
 }
 
