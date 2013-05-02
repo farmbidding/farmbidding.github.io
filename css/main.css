@@ -6,7 +6,7 @@
 body {
     color:                  #000;   
     font-family:            Cutive,'Arial Black', sans-serif;    
-    font-size:              12pt;
+    font-size:              10pt;
     margin:                 0 auto;
     max-width:              800px;
     
@@ -32,7 +32,7 @@ h2 {
     font-size:              150%;    
     font-weight:            bold;
     line-height:            120%;
-    margin:                 0.5em auto 0.2em auto;
+    margin:                 1em auto 0.2em auto;
     text-align:             center;
     text-shadow:            2px 2px 0 rgba(0,0,0,0.1); 
     text-transform:         uppercase;
@@ -43,7 +43,7 @@ h3 {
     font-size:              125%;
     font-weight:            bold;
     line-height:            140%;
-    margin:                 0.5em 0 0.2em 0.2em;
+    margin:                 0.75em 0 0.2em 0.2em;
     text-align:             left;    
     width:                  90%;
 }
