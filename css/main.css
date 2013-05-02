@@ -7,6 +7,8 @@ body {
     color:                  #000;   
     font-family:            Cutive,'Arial Black', sans-serif;    
     font-size:              12pt;
+    margin:                 0 auto;
+    width:                  80%;
 }
 
 h1, h2 {
