@@ -84,4 +84,3 @@ p {
 	text-shadow:            2px 2px 3px #333;    
 }
 
-#shutup:before, #shutup:after { content:"\A"; white-space:pre; }
