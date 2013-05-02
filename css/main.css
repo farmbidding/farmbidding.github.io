@@ -107,6 +107,8 @@ a   {
 }
 
 #footnotes {
+    border-top:             4px double black;
     line-height:            160%;
+    margin:                 3em 0 0 0;
 }
 
