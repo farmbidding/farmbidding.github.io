@@ -8,25 +8,32 @@ body {
     font-family:            Cutive,'Arial Black', sans-serif;    
     font-size:              12pt;
     margin:                 0 auto;
+    max-width:              800px;
     width:                  80%;
 }
 
-h1, h2 {
+
+h1 {
+    color:                  #333;
+    font-family:            'Headland One','Arial Black', sans-serif;
+    font-size:              200%;    
+    font-variant:           small-caps;
+    font-weight:            bold;
+    line-height:            120%;
+    margin:                 0.5em auto 0.2em auto;
+    text-align:             center;
+    text-shadow:            2px 2px 0 rgba(0,0,0,0.1); 
+}
+
+h2 {
     color:                  #333;
     font-family:            'Headland One','Arial Black', sans-serif;
     font-size:              200%;    
     font-weight:            bold;
     line-height:            120%;
-    margin:                 0 auto 0.1em auto;
+    margin:                 0.5em auto 0.2em auto;
     text-align:             center;
     text-shadow:            2px 2px 0 rgba(0,0,0,0.1); 
-}
-
-h1 {
-    font-variant:           small-caps;
-}
-
-h2 {
     text-transform:         uppercase;
 }
 
@@ -35,7 +42,7 @@ h3 {
     font-size:              110%;
     font-weight:            bold;
     line-height:            140%;
-    margin:                 1em auto 0.5em auto;
+    margin:                 0.5em auto 0.2em auto;
     text-align:             center;    
     width:                  90%;
 }
@@ -49,6 +56,7 @@ p {
 }
 
 #shutup {
+    /*
     -moz-box-shadow:        inset 0px 1px 0px 0px #C95D13;
     -webkit-box-shadow:     inset 0px 1px 0px 0px #C95D13;
 	box-shadow:             inset 0px 1px 0px 0px #C95D13;
@@ -56,7 +64,8 @@ p {
     background:             -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F87217), color-stop(1, #FA9C5D) );
 	background:             -moz-linear-gradient( center top, #F87217 5%, #FA9C5D 100% );    
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F87217', endColorstr='#FA9C5D');
-	border:                 2px solid #DF6715;
+    */
+	border:                 2px solid #444;
     -moz-border-radius:     4px;
 	-webkit-border-radius:  4px;
 	border-radius:          4px;
@@ -64,7 +73,7 @@ p {
 	color:                  #ffffff;
     cursor:                 hand;
     cursor:                 pointer;
-    display:                inline-block;
+    display:                inline;
 	font-family:            'Headland One','Arial Black', sans-serif;
 	font-size:              120%;
 	font-weight:            bold;
@@ -72,5 +81,7 @@ p {
     margin:                 1em auto;
 	padding:                6px 24px;
 	text-decoration:        none;
-	text-shadow:            2px 2px 3px #cc9f52;    
+	text-shadow:            2px 2px 3px #333;    
 }
+
+#shutup:before, #shutup:after { content:"\A"; white-space:pre; }
