@@ -113,6 +113,10 @@ a   {
     padding-top:            1em;
 }
 
+#shallowhill {
+    background-image:       url('../img/xander.jpg') no-repeat center ;
+}
+
 p strong {
     /*
     font-family:            Anton;
