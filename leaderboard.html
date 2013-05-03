@@ -24,14 +24,12 @@
             function refresh() {
                 //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
                 
-                $.ajax({
-                   url: 'http://theycallmecarl.com/nwd2/auction2.php',
-                   type: 'GET',
-                   success: function(res) {
+                $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
+                   function(res) {
                      var content = $(res.responseText).text();
                      alert(content);
                    }
-                 });                
+                 );                
             }
             
             $(document).ready(function() {
