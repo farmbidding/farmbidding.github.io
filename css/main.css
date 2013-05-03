@@ -104,7 +104,7 @@ a sup {
 }
 
 
-a   {
+a, a:visited, a:active   {
     color:                  #227;
     text-decoration:        none;
 }
