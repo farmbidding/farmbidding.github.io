@@ -20,14 +20,23 @@
             Loading...
         </div>
         <script>
-            alert('derp');
+            //alert('derp');
             function refresh() {
-                $('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
+                //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
+                
+                $.ajax({
+                   url: 'http://theycallmecarl.com/nwd2/auction2.php',
+                   type: 'GET',
+                   success: function(res) {
+                     var content = $(res.responseText).text();
+                     alert(content);
+                   }
+                 });                
             }
             
             $(document).ready(function() {
                 alert('blah');
-                refresh();
+                //refresh();
             });
         </script>
 
