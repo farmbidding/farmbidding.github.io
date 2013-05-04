@@ -155,3 +155,57 @@ ul {
 li {
     margin:                 0.5em 0 0 0;
 }
+
+td {
+    padding:                0.25em 1em;
+}
+
+th {
+    border-bottom:          double 4px black;
+}
+
+#lbmain {
+    border:                 solid 3px #333;
+    -moz-border-radius:     10px;
+    -webkit-border-radius:  10px;
+	border-radius:          10px;
+    margin:                 0 auto;
+    max-width:              500px;
+    padding:                1em;
+    text-align:             center;
+    width:                  80%;
+}
+
+#lbmain h3 {
+    border-bottom:          double 5px #333;
+    margin:                 0 auto 0.5em 0;
+    padding:                0 0 0.25em 0;
+    text-align:             center;
+}
+
+#leaderboard {
+    border:                 none;
+    display:                block;
+    margin:                 1em auto;
+    min-height:             20em;
+}
+
+#refresh {
+    border:                 solid 2px #113;
+    -moz-border-radius:     5px;
+    -webkit-border-radius:  5px;
+    border-radius:          5px;    
+    color:                  #224;
+    clear:                  both;
+    display:                inline-block;
+    font-size:              125%;
+    padding:                0.5em;
+}
+
+#refresh:hover   {
+    cursor:                 hand;
+    cursor:                 pointer;
+    text-decoration:        none;
+    text-shadow:            1px 1px 2px #55A;  
+    text-shadow:            2px 2px 0 rgba(0,0,99,0.2); 
+}

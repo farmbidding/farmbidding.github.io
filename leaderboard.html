@@ -15,9 +15,12 @@
         <title>Auction Leaderboard</title>    
     </head>
     <body>
-        <h1>Current Auction Leaderboard</h1>
-        <div id="leaderboard">
-            Loading...
+        <div id="lbmain">
+            <h3>Current Auction Leaderboard</h3>
+            <div id="leaderboard">
+                Loading...
+            </div>
+            <span id="refresh" class="button">Refresh</span>
         </div>
         <script>
             //alert('derp');
@@ -25,33 +28,18 @@
                 //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
                 
                 $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
-                /*
-                   function(res) {
-                     var content = $(res.responseText).text();
-                     alert(content);
-                   }
-                   */
-                   
                     function(data) {
-                    var items = [];
                     
-                    /* $.each(data, function(key, val) {
-                    items.push('<li id="' + key + '">' + val + '</li>');
-                    });
-                    
-                    $('<ul/>', {
-                    'class': 'my-new-list',
-                    html: items.join('')
-                    }).appendTo('body');  */
-                    
-                    var html = data.html;
-                    $("#leaderboard").html(html);
+                        var html = data.html;
+                        $("#leaderboard").html(html);
                 } );                
             }
             
             $(document).ready(function() {
-                //alert('blah');
-                refresh();
+                //refresh();
+                //document.setInterval(refresh,1000);
+                
+                $('#refresh').click(refresh);
             });
         </script>
 
