@@ -25,11 +25,25 @@
                 //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
                 
                 $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
+                /*
                    function(res) {
                      var content = $(res.responseText).text();
                      alert(content);
                    }
-                 );                
+                   */
+                   
+                    function(data) {
+                    var items = [];
+                    
+                    $.each(data, function(key, val) {
+                    items.push('<li id="' + key + '">' + val + '</li>');
+                    });
+                    
+                    $('<ul/>', {
+                    'class': 'my-new-list',
+                    html: items.join('')
+                    }).appendTo('body'); 
+                } );                
             }
             
             $(document).ready(function() {
