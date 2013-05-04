@@ -31,13 +31,16 @@
                     function(data) {
                     
                         var html = data.html;
+                        
+                        var now = new Date();
+                        html = html + "<br/> Last Update " + now.toString();
                         $("#leaderboard").html(html);
                 } );                
             }
             
             $(document).ready(function() {
-                //refresh();
-                //document.setInterval(refresh,1000);
+                refresh();
+                document.setInterval(refresh,1000);
                 
                 $('#refresh').click(refresh);
             });
