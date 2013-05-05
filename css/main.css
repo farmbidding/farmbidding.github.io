@@ -17,7 +17,7 @@ body {
 h1 {
     color:                  #333;
     font-family:            'Headland One','Arial Black', sans-serif;
-    font-size:              300%;    
+    font-size:              200%;    
     font-variant:           small-caps;
     font-weight:            bold;
     line-height:            120%;
@@ -26,7 +26,7 @@ h1 {
     text-shadow:            2px 2px 0 rgba(0,0,0,0.1); 
 }
 
-h2 {
+h2,  h2 a, h2 a:visited {
     color:                  #333;
     font-family:            'Headland One','Arial Black', sans-serif;
     font-size:              150%;    
@@ -105,15 +105,16 @@ a sup {
 
 
 a, a:visited, a:active   {
-    color:                  #227;
+    color:                  #225;
     text-decoration:        none;
+    border-bottom:          thin dotted #224;
 }
 
 a:hover   {
-    color:                  #227;
+    color:                  #225;
     text-decoration:        none;
     text-shadow:            1px 1px 2px #55A;  
-    text-shadow:            2px 2px 0 rgba(0,0,99,0.3); 
+    text-shadow:            2px 2px 0 rgba(0,0,99,0.1); 
 }
 
 #footnotes {
@@ -123,9 +124,8 @@ a:hover   {
     padding-top:            1em;
 }
 
-#shallowhill {
-    background-color:       #e2dcd9;
-    background-image:       url('../img/xander4.jpg');
+#shallowhill, #verbance, #paintball, #event {
+    background-color:       #F6F5F4;
     background-repeat:      no-repeat;
     background-position:    center; 
     border:                 2px solid #444;
@@ -133,10 +133,14 @@ a:hover   {
 	-webkit-border-radius:  10px;
 	border-radius:          10px;
     max-width:              800px;
-    margin:                 1em auto;
-    padding:                1em;    
+    margin:                 1em auto 1em auto;
+    padding:                1em 1em 2em 1em;    
 }
 
+#shallowhill {
+    background-image:       url('../img/xander4.jpg');
+
+}
 
 p strong {
     /*
@@ -170,11 +174,11 @@ th {
 }
 
 #lbmain {
-    border:                 solid 3px #333;
+    border:                 solid 2px #333;
     -moz-border-radius:     10px;
     -webkit-border-radius:  10px;
 	border-radius:          10px;
-    margin:                 0 auto;
+    margin:                 1em auto;
     max-width:              500px;
     padding:                1em 0;
     text-align:             center;
