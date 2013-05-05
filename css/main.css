@@ -234,4 +234,27 @@ th {
     font-weight:            bold;
 }
 
+/*
+    Floating mouseover menu
+*/
+span.dropt { }
+span.dropt:hover {text-decoration: none;  z-index: 6; }
+span.dropt span {
+    font-size:80%;
+    position: absolute; 
+    left: -9999px;
+    margin: 0px 0 0 0px; 
+    padding: 3px 3px 3px 3px;
+    border-style:solid; 
+    border-color:black; 
+    border-width:1px; 
+    z-index: 6;
+}
+span.dropt:hover span {left: 0; } 
+span.dropt span {position: absolute; left: -9999px;
+  margin: 4px 0 0 0px; padding: 3px 3px 3px 3px; 
+  border-style:solid; border-color:black; border-width:1px;}
+span.dropt:hover span {margin: 20px 0 0 170px; background: #ffffff; z-index:6;} 
+
+
 
