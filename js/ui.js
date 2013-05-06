@@ -53,7 +53,7 @@ $(document).ready(
               
               var tgt = $("#content");
               if (tgt) {
-                  tgt.fadeOut(200).load(url).fadeIn(200);
+                  tgt.load(url);
                   
                   //This is where we update the address bar with the 'url' parameter
                   window.history.pushState('object', 'New Title', url);
