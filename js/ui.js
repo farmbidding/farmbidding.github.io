@@ -1,120 +1,71 @@
-if (typeof jQuery == 'undefined') {
-    document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
-/*    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);    */        
+//alert('derp');
+function refresh() {
+    //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
+    
+    $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
+        function(data) {
+        
+            var html =  data.html;
+            
+            var d = new Date();
+            var h = d.getHours();
+            var m = d.getMinutes();
+            var s = d.getSeconds();
+            var lud = h + ":" + m + ":" + s
+            html = html + "<br/> Last Update " + lud;
+            $("#leaderboard").fadeOut(300).html('');
+            $("#leaderboard").html(html).fadeIn(300);
+    } );                
 }
 
-
-String.prototype.repeat = function( num )
-{
-    return new Array( num + 1 ).join( this );
+function refreshSH() {
+    //'http://theycallmecarl.com/nwd2/shallowhill.php'
+    $.getJSON('http://theycallmecarl.com/nwd2/shallowhill.php',
+        function(data) {
+        
+            var html =  data.html;
+            
+            $("#shslots").fadeOut(300).html('');
+            $("#shslots").html(html).fadeIn(300);
+        });
 }
 
+function refreshBoth() {
+    refresh();
+    refreshSH();
+}
 
 $(document).ready(function() {
+    refresh();
+    refreshSH();
+    setInterval(refresh,30000);
     
-    /*
-    var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'audio.mp3');
-    audioElement.setAttribute('autoplay', 'autoplay');
-    //audioElement.load()
-    $.get();
-    audioElement.addEventListener("load", function() {
-        audioElement.play();
-    }, true);
-
-    $('.play').click(function() {
-    audioElement.trigger('play');
-    });
+    $('#refresh').click(refreshBoth);
     
+    $('#nav a').click(function(e) {
+          var url = $(this).attr("href");
+     
+          //This function would get content from the server and insert it into the id="content" element
+          // $.getJSON("content.php", {contentid : url},function (data) {
+          //       $("#content").html(data);
+          // });
+          
+          var tgt = $("#content");
+          if (tgt) {
+              tgt.fadeOut(200).load(url).fadeIn(200);
+              
+              //This is where we update the address bar with the 'url' parameter
+              window.history.pushState('object', 'New Title', url);
+         
+              //This stops the browser from actually following the link
+              e.preventDefault();
+          
+          }
+     
+        }    
     
-    $('.pause').click(function() {
-    audioElement.pause();
-    });
-
-
-    */
-    
-    var audioElement;       // = $('#hotpockets');
-    var loaded = false;
-    var n = 0;
-    var playing = false;
-    
-    function ellipses(tgt) {
-        if (loaded) return;
-        else {
-            
-            tgt.html("Buffering" + ".".repeat(n++));
-            if (n > 3) n = 0;
-            window.setTimeout(ellipses, 500,tgt);
-        }
-    }
-    
-    function attachAudio(){
-        var msg = $("#start");
-        
-        if (audioElement) {
-            if (playing) {
-                msg.html("play")
-                $(audioElement).trigger('pause');
-            } else {
-                $(audioElement).trigger('play');
-                msg.html("stop")
-            }
-            playing = !playing;
-        } else {
-            ellipses(msg);
-            
-            audioElement = document.createElement('audio');
-            audioElement.setAttribute('src', 'media/Wewillhotpockets.mp3');
-            audioElement.setAttribute('loop', 'loop');
-            audioElement.setAttribute('autoplay', 'autoplay');
-            //document.appendChild(audioElement);
-            
-            //audioElement.load()
-            $.get();
-            
-            $(audioElement).on("loadeddata", 
-                function () {
-                    loaded = true;
-                    //alert("loaded");
-                    msg.html("stop")
-                    playing = true;
-                }
-            
-            );
-            //audioElement.addEventListener("load", function() {
-            //    audioElement.play();
-            //}, true);
-        
-            $('.play').click(function() {
-                $(audioElement).trigger('play');
-            });
-            
-            
-            $('.pause').click(function() {
-                $(audioElement).pause();
-            });  
-        }
-    }
-    
-    //audioElement.trigger('play');
-    
-    $('#shutup').click(function() {
-        $(audioElement).trigger('pause');
-        $("#shutup").html('');
-    });
-    
-    $('#start').click(function() {
-        $(audioElement).trigger('play');
-        attachAudio();
-    });    
-   
-
-
 });
+
+
+
+

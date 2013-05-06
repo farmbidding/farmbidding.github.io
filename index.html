@@ -16,98 +16,78 @@
     </head>
     <body>
         <h1>Team No Whammies</h1>
+        <div id="nav">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="horses.html">Horses</a></li>
+                <li><a href="paintball.html">Paintball</a></li>
+                <li><a href="verbance.html">Verbance</a></li>
+            </ul>
+        </div>
         <p>
             We're raising money for the mid-Ohio food bank. Check out the 
             cool stuff you can do to help!
         </p>
         
+        <div id="content">
         <div id="event">
-            <h2><a href="horses.html">Family Outing on the Horse farm</a></h2>
-            <p>
-                Come out to Carl's horse farm 
-                (<a class="tgt" href="http://www.shallowhill.com" target="_blank">Shallow Hill
-                </a> ), 
-                bring the family and have a relaxing afternoon<a href="#1"><sup>1</sup></a>
-                with food & pony rides.
-            </p>
-            <p>
-                10 slots currently available.
-            </p>
-
-            
-        </div>
-
-        <div id="event">
-            <h2><a href="horses.html">Paintball Outing</a></h2>
-            <p>
-                Unlimited participation (bring yourself or bring your whole team)! 
-                
-            </p>
-
-            
-        </div>
-
-
-        <div id="event">
-            <h2><a href="horses.html">Outing at Verbance Farm</a></h2>
-            <div id="verbdesc">
+                <h2><a href="horses.html">Family Horse Farm Outing</a></h2>
                 <p>
-                    Bid on a chance to hang out at Verbance farm. 
+                    Come out to Carl's horse farm 
+                    (<a class="tgt" href="http://www.shallowhill.com" target="_blank">Shallow Hill
+                    </a> ), 
+                    bring the family and have a relaxing afternoon<a href="#1"><sup>1</sup></a>
+                    with food & pony rides.
                 </p>
-                <p>
-                    Ride 4 wheelers, 
-                    hiking, drive the tractor, cornhole and an afternoon picnic.
-                </p>
-                <p>
-                	Activities start at 1pm the day of at Verbance farm in 
-                	Amanda.
-                </p>
-            </div>
-            <div id="lbmain">
-                <h3>Leaderboard <a href="leaderboard.html"> &#8635;</a></h3>
-               <!-- <p>
-                    <a href="leaderboard.html">Leaderboard &#8635;</a>
-                </p>-->
-                <div id="leaderboard">
-                    Loading...
+                <div id="shslots">
+                    <p>
+                        
+                    </p>
                 </div>
-                <span id="refresh" class="button">Refresh</span>
-            </div>
-        
-            <div class="clear"> </div>
-        </div>
-
-        
-    <script>
-        //alert('derp');
-        function refresh() {
-            //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
-            
-            $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
-                function(data) {
+    
                 
-                    var html =  data.html;
+            </div>
+    
+            <div id="event">
+                <h2><a href="horses.html">Paintball Outing</a></h2>
+                <p>
+                    Unlimited participation (bring yourself or bring your whole team!) 
+                </p>
+    
+                
+            </div>
+    
+    
+            <div id="event">
+                <h2><a href="verbance.html">Outing at Verbance Farm</a></h2>
+                <div id="verbdesc">
+                    <p>
+                        Bid on a chance to hang out at Verbance farm. 
+                    </p>
+                    <p>
+                        Ride 4 wheelers, 
+                        hiking, drive the tractor, cornhole and an afternoon picnic.
+                    </p>
+                    <p>
+                        Activities start at 1pm the day of at Verbance farm in 
+                        Amanda.
+                    </p>
+                </div>
+                <div id="lbmain">
+                    <h3>Leaderboard <a href="leaderboard.html"> &#8635;</a></h3>
+                   <!-- <p>
+                        <a href="leaderboard.html">Leaderboard &#8635;</a>
+                    </p>-->
+                    <div id="leaderboard">
+                        Loading...
+                    </div>
                     
-                    var d = new Date();
-                    var h = d.getHours();
-                    var m = d.getMinutes();
-                    var s = d.getSeconds();
-                    var lud = h + ":" + m + ":" + s
-                    html = html + "<br/> Last Update " + lud;
-                    $("#leaderboard").fadeOut(300).html('');
-                    $("#leaderboard").html(html).fadeIn(300);
-            } );                
-        }
-        
-        $(document).ready(function() {
-            refresh();
-            setInterval(refresh,30000);
+                </div>
             
-            $('#refresh').click(refresh);
-        });
-    </script>    
+                <div class="clear"> </div>
+            </div>
 
-        
+        </div>        
 
     </body>
 </html>
