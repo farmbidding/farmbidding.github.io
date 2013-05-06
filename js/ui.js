@@ -60,19 +60,21 @@ $(document).ready(
         
         $('#nav a').click(function(e) {
               var url = $(this).attr("href");
+              
          
               //This function would get content from the server and insert it into the id="content" element
               // $.getJSON("content.php", {contentid : url},function (data) {
               //       $("#content").html(data);
               // });
               
-/*              var tgt = $("#content");
+              var tgt = $("#content");
               if (tgt) {
                   tgt.fadeOut(300).load(url,
                     function() {
                         $(this).fadeIn(300);
                     }
-                  );
+                  
+            	);
                   
                   //This is where we update the address bar with the 'url' parameter
                   window.history.pushState('object', 'New Title', url);
@@ -80,26 +82,13 @@ $(document).ready(
                   //This stops the browser from actually following the link
                   e.preventDefault();
               
-              }*/
-              
-              if (LoadContent(url)) {
-                  //This is where we update the address bar with the 'url' parameter
-                  window.history.pushState('object', 'New Title', url);
-             
-                  //This stops the browser from actually following the link
-                  e.preventDefault();
-                  
               }
+              
          
             }
         );
-        
-	window.onpopstate = function(event) {
-		$("#loading").show();
-		console.log("pathname: "+location.pathname);
-		LoadContent(location.pathname);
-	};        
     
+
 });
 
 
