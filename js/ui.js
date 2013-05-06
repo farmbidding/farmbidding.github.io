@@ -13,7 +13,7 @@ function refresh() {
             var s = d.getSeconds();
             var lud = h + ":" + m + ":" + s
             html = html + "<br/> Last Update " + lud;
-            $("#leaderboard").fadeOut(300).html('');
+            $("#leaderboard").fadeOut(300).html('').hide();
             $("#leaderboard").html(html).fadeIn(300);
     } );                
 }
@@ -25,7 +25,7 @@ function refreshSH() {
         
             var html =  data.html;
             
-            $("#shslots").fadeOut(300).html('');
+            $("#shslots").fadeOut(300).html('').hide();
             $("#shslots").html(html).fadeIn(300);
         });
 }
