@@ -38,7 +38,8 @@
                         var s = d.getSeconds();
                         var lud = h + ":" + m + ":" + s
                         html = html + "<br/> Last Update " + lud;
-                        $("#leaderboard").html(html);
+                        $("#leaderboard").fadeOut(300).html('');
+                        $("#leaderboard").html(html).fadeIn(300);
                 } );                
             }
             

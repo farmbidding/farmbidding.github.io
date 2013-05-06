@@ -17,7 +17,7 @@ body {
 h1 {
     color:                  #333;
     font-family:            'Headland One','Arial Black', sans-serif;
-    font-size:              200%;    
+    font-size:              250%;    
     font-variant:           small-caps;
     font-weight:            bold;
     line-height:            120%;
@@ -29,7 +29,7 @@ h1 {
 h2,  h2 a, h2 a:visited {
     color:                  #333;
     font-family:            'Headland One','Arial Black', sans-serif;
-    font-size:              150%;    
+    font-size:              130%;    
     font-weight:            bold;
     line-height:            120%;
     margin:                 0 auto 0.2em auto;
@@ -41,7 +41,7 @@ h2,  h2 a, h2 a:visited {
 h3 {
     color:                  #222;
     font-family:            'Headland One',Arial, Arial, Helvetica, sans-serif;
-    font-size:              125%;
+    font-size:              120%;
     font-weight:            bold;
     line-height:            140%;
     margin:                 0.75em 0 0.4em 0.2em;
@@ -171,6 +171,7 @@ td {
 
 th {
     border-bottom:          double 4px black;
+    padding:				0.5em 0 0 0;
 }
 
 #lbmain {
