@@ -175,19 +175,27 @@ th {
 }
 
 #lbmain {
-    border:                 solid 2px #333;
+    /*border:                 solid 2px #333;*/
     -moz-border-radius:     10px;
     -webkit-border-radius:  10px;
 	border-radius:          10px;
+    float:                  right;
+    font-size:              80%;
     margin:                 1em auto;
     max-width:              500px;
     padding:                1em 0;
     text-align:             center;
-    width:                  80%;
+    width:                  40%;
+}
+
+#verbdesc {
+    float:                  left;
+    width:                  55%;
 }
 
 #lbmain h3 {
-    border-bottom:          double 5px #333;
+    border-bottom:          double 4px #333;
+    font-size:              130%;
     margin:                 0 auto 0.5em auto;
     padding:                0 0 0.25em 0;
     text-align:             center;
@@ -237,6 +245,10 @@ th {
 
 .n1, .n5, .n6 {
     font-weight:            bold;
+}
+
+.clear {
+    clear:                  both;
 }
 
 /*

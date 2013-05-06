@@ -50,57 +50,62 @@
 
         <div id="event">
             <h2><a href="horses.html">Outing at Verbance Farm</a></h2>
-            <p>
-                Bid on a chance to hang out at Verbance farm. Ride 4 wheelers, 
-                hiking, drive the tractor, cornhole and an afternoon picnic.
-            </p>
-            <p>
-            	Activities start at 1pm the day of at Verbance farm in 
-            	Amanda.
-            </p>
-
-            <div id="lbmain">
-                <h3>Current Auction Leaderboard</h3>
+            <div id="verbdesc">
                 <p>
-                    <a href="leaderboard.html">Leaderboard &#8635;</a>
+                    Bid on a chance to hang out at Verbance farm. 
                 </p>
+                <p>
+                    Ride 4 wheelers, 
+                    hiking, drive the tractor, cornhole and an afternoon picnic.
+                </p>
+                <p>
+                	Activities start at 1pm the day of at Verbance farm in 
+                	Amanda.
+                </p>
+            </div>
+            <div id="lbmain">
+                <h3>Leaderboard <a href="leaderboard.html"> &#8635;</a></h3>
+               <!-- <p>
+                    <a href="leaderboard.html">Leaderboard &#8635;</a>
+                </p>-->
                 <div id="leaderboard">
                     Loading...
                 </div>
                 <span id="refresh" class="button">Refresh</span>
             </div>
-            <script>
-                //alert('derp');
-                function refresh() {
-                    //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
-                    
-                    $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
-                        function(data) {
-                        
-                            var html =  data.html;
-                            
-                            var d = new Date();
-                            var h = d.getHours();
-                            var m = d.getMinutes();
-                            var s = d.getSeconds();
-                            var lud = h + ":" + m + ":" + s
-                            html = html + "<br/> Last Update " + lud;
-                            $("#leaderboard").fadeOut(300).html('');
-                            $("#leaderboard").html(html).fadeIn(300);
-                    } );                
-                }
-                
-                $(document).ready(function() {
-                    refresh();
-                    setInterval(refresh,30000);
-                    
-                    $('#refresh').click(refresh);
-                });
-            </script>            
+        
+            <div class="clear"> </div>
         </div>
 
         
-
+    <script>
+        //alert('derp');
+        function refresh() {
+            //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
+            
+            $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
+                function(data) {
+                
+                    var html =  data.html;
+                    
+                    var d = new Date();
+                    var h = d.getHours();
+                    var m = d.getMinutes();
+                    var s = d.getSeconds();
+                    var lud = h + ":" + m + ":" + s
+                    html = html + "<br/> Last Update " + lud;
+                    $("#leaderboard").fadeOut(300).html('');
+                    $("#leaderboard").html(html).fadeIn(300);
+            } );                
+        }
+        
+        $(document).ready(function() {
+            refresh();
+            setInterval(refresh,30000);
+            
+            $('#refresh').click(refresh);
+        });
+    </script>    
 
         
 
