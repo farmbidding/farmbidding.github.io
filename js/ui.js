@@ -1,6 +1,5 @@
-//alert('derp');
+
 function refresh() {
-    //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
     
     $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
         function(data) {
@@ -9,12 +8,14 @@ function refresh() {
             
             var d = new Date();
             var h = d.getHours();
-            var m = d.getMinutes();
-            var s = d.getSeconds();
-            var lud = h + ":" + m + ":" + s
-            html = html + "<br/> Last Update " + lud;
-            $("#leaderboard").fadeOut(300).html('').hide();
-            $("#leaderboard").html(html).fadeIn(300);
+            var ampm = (h > 11) ? "PM" : "AM";
+            h = ((h - 1) % 12) + 1;
+            h = ('0' + h).slice(-2);
+            var m = ('0' + d.getMinutes()).slice(-2);
+            var s = ('0' + d.getSeconds()).slice(-2);
+            var lud = h + ":" + m + ":" + s + " " + ampm;
+            html = html + "<br/>Updated " + lud;
+            $("#leaderboard").html(html);	
     } );                
 }
 
@@ -25,8 +26,7 @@ function refreshSH() {
         
             var html =  data.html;
             
-            $("#shslots").fadeOut(300).html('').hide();
-            $("#shslots").html(html).fadeIn(300);
+            $("#shslots").html(html);	
         });
 }
 
@@ -38,11 +38,9 @@ function refreshBoth() {
 function LoadContent(url) {
     var tgt = $("#content");
     if (tgt) {
-      tgt.fadeOut(300).load(url,
-        function() {
-            $(this).fadeIn(300);
-        }
-      );
+
+      tgt.load(url);
+
       return true;
     }
     
@@ -50,32 +48,63 @@ function LoadContent(url) {
 
 }
 
+function getURLParameter(name,str) {
+	//console.log(location.search);
+    return decodeURI(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(str)||[,null])[1]
+    );
+}
+
+function nav(url) {
+              
+              var param = getURLParameter("id",url);
+                       
+              var tgt = "main.html";
+              //console.log(param);
+              switch (param) {
+              	case "horses":
+              		tgt = "horses.html";
+              		break;
+              	case "verb":
+              		tgt = "verbance.html";
+              		break;
+              	case "paint":
+              		tgt = "paintball.html";
+              		break;
+              	default:
+              		tgt = "main.html";
+              		break;
+              }
+              
+              //console.log(url);
+              var out = $("#content");
+              if (out) {
+              	out.load(tgt);
+                  
+            	}
+            	
+            	loaded = true;
+
+}
+
+var loaded = false;
+
 $(document).ready(
-    function() {
-        refresh();
-        refreshSH();
-        setInterval(refresh,30000);
-        
+    function() {        
         $('#refresh').click(refreshBoth);
         
+        //nav( $(this).attr("href") );
+        var currUrl = $(this).attr("href");
+        if (currUrl == null) {
+        	currUrl = location.search;
+        }
+        if (!loaded) nav(currUrl);
+        
         $('#nav a').click(function(e) {
-              var url = $(this).attr("href");
-              
-         
-              //This function would get content from the server and insert it into the id="content" element
-              // $.getJSON("content.php", {contentid : url},function (data) {
-              //       $("#content").html(data);
-              // });
-              
-              var tgt = $("#content");
-              if (tgt) {
-                  tgt.fadeOut(300).load(url,
-                    function() {
-                        $(this).fadeIn(300);
-                    }
-                  
-            	);
-                  
+        	
+        	var url = $(this).attr("href");
+        	//console.log($(this).attr("href"));
+            nav(url);
                   //This is where we update the address bar with the 'url' parameter
                   window.history.pushState('object', 'New Title', url);
              
@@ -85,8 +114,17 @@ $(document).ready(
               }
               
          
-            }
+            
         );
+        
+        window.onpopstate = function(event) {
+        	var currUrl = $(this).attr("href");
+        	if (currUrl == null) {
+        		currUrl = location.search;
+        	}
+        	console.log(currUrl);
+        	nav(currUrl);
+        }
     
 
 });
