@@ -35,6 +35,21 @@ function refreshBoth() {
     refreshSH();
 }
 
+function LoadContent(url) {
+    var tgt = $("#content");
+    if (tgt) {
+      tgt.fadeOut(300).load(url,
+        function() {
+            $(this).fadeIn(300);
+        }
+      );
+      return true;
+    }
+    
+    return false;
+
+}
+
 $(document).ready(
     function() {
         refresh();
@@ -51,7 +66,7 @@ $(document).ready(
               //       $("#content").html(data);
               // });
               
-              var tgt = $("#content");
+/*              var tgt = $("#content");
               if (tgt) {
                   tgt.fadeOut(300).load(url,
                     function() {
@@ -65,10 +80,25 @@ $(document).ready(
                   //This stops the browser from actually following the link
                   e.preventDefault();
               
+              }*/
+              
+              if (LoadContent(url)) {
+                  //This is where we update the address bar with the 'url' parameter
+                  window.history.pushState('object', 'New Title', url);
+             
+                  //This stops the browser from actually following the link
+                  e.preventDefault();
+                  
               }
          
             }
         );
+        
+	window.onpopstate = function(event) {
+		$("#loading").show();
+		console.log("pathname: "+location.pathname);
+		LoadContent(location.pathname);
+	};        
     
 });
 
