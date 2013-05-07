@@ -25,28 +25,32 @@ function refresh() {
     } else {
         var abc = $.ajax({
             type: "GET",
-            url: "http://theycallmecarl.com/nwd2/auction2.php&callback=?",
+            url: "http://theycallmecarl.com/nwd2/auction3.php&callback=?",
             dataType: "jsonp",
             jsonp: false,
             cache: false
         });
+        
+        var error = false;
     
         abc.error(function (data, xhr, dat1) {
-            alert("ERROR!");
+            error = true;
         });
     
         abc.complete(function (xhr, status) {
-            var data = xhr.responseText;
-            var html =  data.html;
-            
-            html = html + "<br/>Updated " + getTime();
-            $("#leaderboard").html(html);    
+            if (!error){
+                var data = xhr.responseText;
+                var html =  data.html;
+                
+                html = html + "<br/>Updated " + getTime();
+                $("#leaderboard").html(html);    
+            }
             
         });
     
         abc.done(function(data){
            //alert(data.people[0].nameFirst); ?????  
-           alert("done");
+           //alert("done");
         });     
     }
 }
