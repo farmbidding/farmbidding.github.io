@@ -306,6 +306,10 @@ th {
     
     }
     
+    #lbmain {
+        display:                none;
+    }
+    
     
     .n1, .n2, .n3, .n4, .n5, .n6, .n7, .n8, .n9, .n10, .out {
         font-weight:            normal;
