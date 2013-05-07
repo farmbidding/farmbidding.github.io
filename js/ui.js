@@ -14,7 +14,7 @@ function getTime() {
 
 function refresh() {
     if (Browser.Version() > 900) {
-        $.getJSON('http://theycallmecarl.com/nwd2/auction2.php&callback=?',
+        $.getJSON('http://theycallmecarl.com/nwd2/auction2.php?callback=?',
             function(data) {
             
                 var html =  data.html;
