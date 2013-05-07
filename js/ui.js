@@ -32,7 +32,7 @@ function refresh() {
         });
     
         abc.error(function (data, xhr, dat1) {
-    
+            alert("ERROR!");
         });
     
         abc.complete(function (xhr, status) {
@@ -44,9 +44,10 @@ function refresh() {
             
         });
     
-        abc.done(data){
-           //alert(data.people[0].nameFirst); ?????        
-        }        
+        abc.done(function(data){
+           //alert(data.people[0].nameFirst); ?????  
+           alert("done");
+        });     
     }
 }
 
