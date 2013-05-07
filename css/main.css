@@ -171,12 +171,25 @@ th {
     /*border:                 solid 2px #333;*/
     -moz-border-radius:     10px;
     -webkit-border-radius:  10px;
-	border-radius:          10px;
+    border-radius:          10px;
     float:                  right;
     font-size:              80%;
     margin:                 1em auto;
     max-width:              500px;
     padding:                1em 0;
+    text-align:             center;
+    width:                  40%;
+}
+
+#lbsingle {
+    border:                 solid 2px #333;
+    -moz-border-radius:     10px;
+    -webkit-border-radius:  10px;
+    border-radius:          10px;
+    font-size:              80%;
+    margin:                 1em auto;
+    max-width:              500px;
+    padding:                1em 2em;
     text-align:             center;
     width:                  40%;
 }
