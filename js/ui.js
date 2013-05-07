@@ -116,7 +116,7 @@ $(document).ready(
         	//console.log($(this).attr("href"));
             nav(url);
                   //This is where we update the address bar with the 'url' parameter
-                  if (Browser.Version() < 900) {
+                  if (Browser.Version() > 900) {
                     window.history.pushState('object', 'New Title', url);
                   }
                  
