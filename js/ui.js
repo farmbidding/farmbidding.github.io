@@ -106,10 +106,10 @@ $(document).ready(
         	//console.log($(this).attr("href"));
             nav(url);
                   //This is where we update the address bar with the 'url' parameter
-                  if (!$.browser.msie) {
-                    window.history.pushState('object', 'New Title', url);
-                  }
-             
+                  //if (!$.browser.msie) {
+                  //  window.history.pushState('object', 'New Title', url);
+                  //}
+                    alert($.browser.msie);
                   //This stops the browser from actually following the link
                   e.preventDefault();
               
