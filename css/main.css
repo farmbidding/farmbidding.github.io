@@ -186,12 +186,16 @@ th {
     -moz-border-radius:     10px;
     -webkit-border-radius:  10px;
     border-radius:          10px;
-    font-size:              80%;
+    font-size:              100%;
     margin:                 1em auto;
-    max-width:              500px;
+    max-width:              600px;
     padding:                1em 2em;
     text-align:             center;
     width:                  40%;
+}
+
+#lbsingle #refresh {
+    font-size:              10pt;
 }
 
 #verbdesc {
