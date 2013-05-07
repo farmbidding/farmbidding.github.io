@@ -88,44 +88,6 @@ p {
     width:                  98%;
 }
 
-div.shutup {
-    font-family:            'Headland One','Arial Black', sans-serif;
-	font-size:              120%;
-	font-weight:            bold;
-    letter-spacing:         2px;
-    line-height:            200%;
-    margin:                 1em 0;
-    
-
-    clear:                  both;
-    display:                inline-block;
-    text-align:             center;
-    width:                  100%;
-}
-
-span.shutup {
-    /*
-    -moz-box-shadow:        inset 0px 1px 0px 0px #C95D13;
-    -webkit-box-shadow:     inset 0px 1px 0px 0px #C95D13;
-	box-shadow:             inset 0px 1px 0px 0px #C95D13;
-	background:             #F87217;
-    background:             -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F87217), color-stop(1, #FA9C5D) );
-	background:             -moz-linear-gradient( center top, #F87217 5%, #FA9C5D 100% );    
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F87217', endColorstr='#FA9C5D');
-    */
-	border:                 2px solid #444;
-    -moz-border-radius:     4px;
-	-webkit-border-radius:  4px;
-	border-radius:          4px;
-	color:                  #000;
-    cursor:                 hand;
-    cursor:                 pointer;
-    display:                inline;
-    margin:                 1em auto;
-	padding:                6px 24px;
-	text-decoration:        none;
-	text-shadow:            2px 2px 3px #333;    
-}
 
 a sup {
     font-size:              70%;
@@ -281,27 +243,51 @@ th {
     clear:                  both;
 }
 
-/*
-    Floating mouseover menu
-*/
-span.dropt { }
-span.dropt:hover {text-decoration: none;  z-index: 6; }
-span.dropt span {
-    font-size:80%;
-    position: absolute; 
-    left: -9999px;
-    margin: 0px 0 0 0px; 
-    padding: 3px 3px 3px 3px;
-    border-style:solid; 
-    border-color:black; 
-    border-width:1px; 
-    z-index: 6;
+
+
+@media screen and (max-width:480px)
+{
+
+    /*
+        tag styles
+    */
+    
+    body {
+        font-size:              12pt;
+        margin:                 0 auto;
+        width:                  100%;
+    }
+    
+    h1, h2,  h2 a, h2 a:visited  {
+        font-size:              14pt;    
+        font-weight:            bold;
+    }
+    
+    h3 {
+        font-size:              12pt;
+        font-weight:            normal;
+    }
+    
+    /*
+        Nav
+    */
+    
+    #nav li {
+        font-size:              12pt;
+    }
+    
+    
+    #shallowhill {
+        background-image:       none;
+    
+    }
+    
+    
+    .n1, .n2, .n3, .n4, .n5, .n6, .n7, .n8, .n9, .n10, .out {
+        font-weight:            normal;
+    }
+    
+
+
 }
-span.dropt:hover span {left: 0; } 
-span.dropt span {position: absolute; left: -9999px;
-  margin: 4px 0 0 0px; padding: 3px 3px 3px 3px; 
-  border-style:solid; border-color:black; border-width:1px;}
-span.dropt:hover span {margin: 20px 0 0 170px; background: #ffffff; z-index:6;} 
-
-
 
