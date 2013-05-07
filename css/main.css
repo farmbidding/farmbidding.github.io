@@ -218,6 +218,10 @@ th {
     min-height:             20em;
 }
 
+#lbalt {
+    display:                none;
+}
+
 #refresh {
     border:                 solid 2px #113;
     -moz-border-radius:     5px;
@@ -298,14 +302,28 @@ th {
     
     }
     
-    #lbmain {
-        display:                none;
-    }
     
     
     .n1, .n2, .n3, .n4, .n5, .n6, .n7, .n8, .n9, .n10, .out {
         font-weight:            normal;
     }
+    
+
+    #lbmain {
+        display:                block;
+        float:                  none;
+        font-size:              90%;
+        margin:                 1em auto;
+        width:                  auto;
+        
+    }
+
+    #verbdesc{
+        float:                  none;
+        font-size:              100%;
+        width:                  80%;  
+    }       
+    
 }
 
 @media screen and (max-width:630px) {
@@ -338,6 +356,7 @@ th {
     #nav li {
         font-size:              10pt;       
     }    
+     
 }
 
 @media screen and (max-width:500px) {
@@ -351,6 +370,11 @@ th {
         margin:                 1em auto 1em auto;
         padding:                1em 1em 2em 1em;    
     }
+    
+    #lbalt {
+        display:                block;
+    }
+    
 
     
 }
