@@ -133,7 +133,7 @@ var Browser = {
 
 $(document).ready(
     function() {        
-        $('#refresh').click(refreshBoth);
+        $('#refresh').click(refresh);
         
         //nav( $(this).attr("href") );
         var currUrl = $(this).attr("href");
