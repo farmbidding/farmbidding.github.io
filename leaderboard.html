@@ -6,12 +6,19 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         
-        <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="js/ui.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			if (typeof jQuery == 'undefined') {
+    			document.write(unescape("%3Cscript src='/js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+			}
+		</script>
+		<script type="text/javascript" src="js/ui.js"></script>
         
         <!--[if lt IE 9]>
             <link rel="stylesheet" type="text/css" href="ie.css" />
         <![endif]-->        
+   
         <title>Auction Leaderboard</title>    
     </head>
     <body>
@@ -23,31 +30,13 @@
             <span id="refresh" class="button">Refresh</span>
         </div>
         <script>
-            //alert('derp');
-            function refresh() {
-                //$('#leaderboard').fadeOut('slow').load('http://theycallmecarl.com/nwd2/auction.php').fadeIn("slow");
-                
-                $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
-                    function(data) {
-                    
-                        var html = data.html;
-                        
-                        var d = new Date();
-                        var h = d.getHours();
-                        var m = d.getMinutes();
-                        var s = d.getSeconds();
-                        var lud = h + ":" + m + ":" + s
-                        html = html + "<br/> Last Update " + lud;
-                        $("#leaderboard").fadeOut(300).html('');
-                        $("#leaderboard").html(html).fadeIn(300);
-                } );                
-            }
             
             $(document).ready(function() {
                 refresh();
-                //setInterval(refresh,5000);
-                
+                //refreshSH();
+                setInterval(refresh,30000);
                 $('#refresh').click(refresh);
+
             });
         </script>
 

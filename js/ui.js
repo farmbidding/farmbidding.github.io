@@ -66,10 +66,6 @@ function refreshSH() {
         });
 }
 
-function refreshBoth() {
-    refresh();
-    refreshSH();
-}
 
 function LoadContent(url) {
     var tgt = $("#content");
@@ -137,7 +133,7 @@ var Browser = {
 
 $(document).ready(
     function() {        
-        $('#refresh').click(refresh);
+        
         
         //nav( $(this).attr("href") );
         var currUrl = $(this).attr("href");
