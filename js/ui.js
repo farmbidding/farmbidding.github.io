@@ -12,6 +12,13 @@ function getTime() {
     return lud;
 }
 
+function cb(data){
+                 var html =  data.html;
+                
+                html = html + "<br/>Updated " + getTime();
+                $("#leaderboard").html(html);    
+                   
+}
 function refresh() {
     if ( Browser.Version() > 900) {
         $.getJSON('http://media.teamnowhammies.com/auction2.php',
@@ -31,6 +38,7 @@ function refresh() {
             crossDomain: true,
             jsonp: false,
             cache: false,
+            jsonpCallback: 'cb',
             success: function(data) {
                 var html =  data.html;
                 
@@ -40,6 +48,8 @@ function refresh() {
                 
             }
         });
+        
+
         
         var error = false;
     
