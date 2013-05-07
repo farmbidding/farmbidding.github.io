@@ -23,15 +23,26 @@ function refresh() {
     if ( Browser.Version() > 900) {
         $.getJSON('http://media.teamnowhammies.com/auction2.php',
             function(data) {
-                if (data){
                     var html =  data.html;
                     
                     html = html + "<br/>Updated " + getTime();
                     $("#leaderboard").html(html);	
-                }
         } );
     } else {
-        var abc = $.ajax({
+        $.getJSON("http://media.teamnowhammies.com/auction3.php?callback=?", null,
+            function(data) {
+                if (data) {
+                    var html =  data.html;
+                    
+                    html = html + "<br/>Updated " + getTime();
+                    $("#leaderboard").html(html);  
+                }                
+            }
+        
+        
+        );
+        /*
+        var abc = $.getJSON({
             type: "GET",
             url: "http://media.teamnowhammies.com/auction3.php&callback=?",
             dataType: "script",
@@ -41,14 +52,17 @@ function refresh() {
             cache: false,
             jsonpCallback: 'cb',
             success: function(data) {
-                var html =  data.html;
-                
-                html = html + "<br/>Updated " + getTime();
-                $("#leaderboard").html(html);    
+                if (data) {
+                    var html =  data.html;
+                    
+                    html = html + "<br/>Updated " + getTime();
+                    $("#leaderboard").html(html);  
+                }
                 
                 
             }
         });
+        */
         
 
         
