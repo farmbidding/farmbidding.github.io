@@ -18,12 +18,12 @@ h1 {
     color:                  #333;
     font-family:            'Headland One','Arial Black', sans-serif;
     font-size:              300%;    
-    font-variant:           small-caps;
     font-weight:            bold;
     line-height:            120%;
     margin:                 0.5em auto 0.2em auto;
     text-align:             center;
     text-shadow:            2px 2px 0 rgba(0,0,0,0.1); 
+    text-transform:         uppercase;
 }
 
 h2,  h2 a, h2 a:visited {
@@ -31,11 +31,12 @@ h2,  h2 a, h2 a:visited {
     font-family:            'Headland One','Arial Black', sans-serif;
     font-size:              130%;    
     font-weight:            bold;
+    font-variant:           small-caps;
+    
     line-height:            120%;
     margin:                 0 auto 0.2em auto;
     text-align:             center;
     text-shadow:            2px 2px 0 rgba(0,0,0,0.1); 
-    text-transform:         uppercase;
 }
 
 h3 {
@@ -71,7 +72,7 @@ h3 {
     display:                inline-block;
     list-style:             none;
     margin:                 0 1em;
-    min-width:              5em;
+    min-width:              8em;
     text-align:             center;
 }
 
@@ -245,7 +246,7 @@ th {
 
 
 
-@media screen and (max-width:480px)
+@media screen and (max-width:800px)
 {
 
     /*
@@ -258,7 +259,12 @@ th {
         width:                  100%;
     }
     
-    h1, h2,  h2 a, h2 a:visited  {
+    h1 {
+        font-size:              16pt;
+        
+    }
+    
+    h2,  h2 a, h2 a:visited  {
         font-size:              14pt;    
         font-weight:            bold;
     }
@@ -268,15 +274,33 @@ th {
         font-weight:            normal;
     }
     
+    .content {
+        display:                block;
+        width:                  100%;
+    }
+    
     /*
         Nav
     */
     
+    #nav ul {
+        display:                inline-block;
+    }
     #nav li {
+        display:                block;
+        float:                  left;
         font-size:              12pt;
+        margin:                 0.3em 1em;        
+    }
+
+    .mqclear {
+        clear:both;
+        float:left;
     }
     
-    
+    #content {
+        display:                inline-block;
+    }
     #shallowhill {
         background-image:       none;
     
