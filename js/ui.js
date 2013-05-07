@@ -109,7 +109,7 @@ $(document).ready(
                   //if (!$.browser.msie) {
                   //  window.history.pushState('object', 'New Title', url);
                   //}
-                    alert($.browser.msie);
+                    alert($.browser.version);
                   //This stops the browser from actually following the link
                   e.preventDefault();
               
