@@ -27,6 +27,7 @@ function refresh() {
             type: "GET",
             url: "http://media.teamnowhammies.com/auction3.php?callback=?",
             dataType: "jsonp",
+            crossDomain: true,
             jsonp: false,
             cache: false,
             success: function(data) {
