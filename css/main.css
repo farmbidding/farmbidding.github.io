@@ -246,34 +246,9 @@ th {
 
 
 
-@media screen and (max-width:600px)
+@media screen and (max-width:725px)
 {
 
-    /*
-        tag styles
-    */
-    
-    body {
-        font-size:              12pt;
-        margin:                 0 auto;
-        width:                  100%;
-    }
-    
-    h1 {
-        font-size:              16pt;
-        
-    }
-    
-    h2,  h2 a, h2 a:visited  {
-        font-size:              14pt;    
-        font-weight:            bold;
-    }
-    
-    h3 {
-        font-size:              12pt;
-        font-weight:            normal;
-    }
-    
     .content {
         display:                block;
         width:                  100%;
@@ -316,10 +291,49 @@ th {
     }
 }
 
+@media screen and (max-width:630px) {
+
+    /*
+        tag styles
+    */
+    
+    body {
+        font-size:              12pt;
+        margin:                 0 auto;
+        width:                  95%;
+    }
+    
+    h1 {
+        font-size:              16pt;
+        
+    }
+    
+    h2,  h2 a, h2 a:visited  {
+        font-size:              14pt;    
+        font-weight:            bold;
+    }
+    
+    h3 {
+        font-size:              12pt;
+        font-weight:            normal;
+    }
+    
+    #nav li {
+        font-size:              10pt;       
+    }    
+}
+
 @media screen and (max-width:500px) {
+    
     #lbmain {
         display:                none;
     }
-    
+
+    #verbdesc{
+        width:                  auto;
+        margin:                 1em auto 1em auto;
+        padding:                1em 1em 2em 1em;    
+    }
+
     
 }
