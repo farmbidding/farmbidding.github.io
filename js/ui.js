@@ -25,7 +25,7 @@ function refresh() {
     } else {
         var abc = $.ajax({
             type: "GET",
-            url: "http://theycallmecarl.com/nwd2/auction3.php&callback=?",
+            url: "http://theycallmecarl.com/nwd2/auction3.php?callback=?",
             dataType: "jsonp",
             jsonp: false,
             cache: false
