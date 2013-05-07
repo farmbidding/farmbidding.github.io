@@ -33,7 +33,7 @@ function refresh() {
     } else {
         var abc = $.ajax({
             type: "GET",
-            url: "http://media.teamnowhammies.com/auction3.php?callback=?",
+            url: "http://media.teamnowhammies.com/auction3.php&callback=?",
             dataType: "script",
             timeout:2000,
             crossDomain: true,
