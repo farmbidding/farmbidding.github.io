@@ -1,22 +1,53 @@
 
+
+function getTime() {
+    var d = new Date();
+    var h = d.getHours();
+    var ampm = (h > 11) ? "PM" : "AM";
+    h = ((h - 1) % 12) + 1;
+    h = ('0' + h).slice(-2);
+    var m = ('0' + d.getMinutes()).slice(-2);
+    var s = ('0' + d.getSeconds()).slice(-2);
+    var lud = h + ":" + m + ":" + s + " " + ampm;
+    return lud;
+}
+
 function refresh() {
+    if (Browser.Version() > 900) {
+        $.getJSON('http://theycallmecarl.com/nwd2/auction2.php&callback=?',
+            function(data) {
+            
+                var html =  data.html;
+                
+                html = html + "<br/>Updated " + getTime();
+                $("#leaderboard").html(html);	
+        } );
+    } else {
+        var abc = $.ajax({
+            type: "GET",
+            url: "http://theycallmecarl.com/nwd2/auction2.php&callback=?",
+            dataType: "jsonp",
+            jsonp: false,
+            cache: false
+        });
     
-    $.getJSON('http://theycallmecarl.com/nwd2/auction2.php&callback=?',
-        function(data) {
-        
+        abc.error(function (data, xhr, dat1) {
+    
+        });
+    
+        abc.complete(function (xhr, status) {
+            var data = xhr.responseText;
             var html =  data.html;
             
-            var d = new Date();
-            var h = d.getHours();
-            var ampm = (h > 11) ? "PM" : "AM";
-            h = ((h - 1) % 12) + 1;
-            h = ('0' + h).slice(-2);
-            var m = ('0' + d.getMinutes()).slice(-2);
-            var s = ('0' + d.getSeconds()).slice(-2);
-            var lud = h + ":" + m + ":" + s + " " + ampm;
-            html = html + "<br/>Updated " + lud;
-            $("#leaderboard").html(html);	
-    } );                
+            html = html + "<br/>Updated " + getTime();
+            $("#leaderboard").html(html);    
+            
+        });
+    
+        abc.done(data){
+           //alert(data.people[0].nameFirst); ?????        
+        }        
+    }
 }
 
 function refreshSH() {
