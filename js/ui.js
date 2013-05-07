@@ -13,8 +13,8 @@ function getTime() {
 }
 
 function refresh() {
-    if (Browser.Version() > 900) {
-        $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
+    if (1)      { //Browser.Version() > 900) {
+        $.getJSON('http://media.teamnowhammies.com/auction2.php',
             function(data) {
             
                 var html =  data.html;
