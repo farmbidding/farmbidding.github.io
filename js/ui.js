@@ -28,7 +28,15 @@ function refresh() {
             url: "http://media.teamnowhammies.com/auction3.php?callback=?",
             dataType: "jsonp",
             jsonp: false,
-            cache: false
+            cache: false,
+            success: function(data) {
+                var html =  data.html;
+                
+                html = html + "<br/>Updated " + getTime();
+                $("#leaderboard").html(html);    
+                
+                
+            }
         });
         
         var error = false;
@@ -47,6 +55,7 @@ function refresh() {
             }
             
         });
+
     
         abc.done(function(data){
            //alert(data.people[0].nameFirst); ?????  
