@@ -20,6 +20,8 @@ function cb(data){
 
 }
 function refresh() {
+    if (!$("#lbmain").is(":visible")) return;
+    
     if ( Browser.Version() > 900) {
         $.getJSON('http://media.teamnowhammies.com/auction2.php',
             function(data) {

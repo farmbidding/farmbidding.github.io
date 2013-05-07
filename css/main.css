@@ -246,7 +246,7 @@ th {
 
 
 
-@media screen and (max-width:800px)
+@media screen and (max-width:600px)
 {
 
     /*
@@ -314,8 +314,12 @@ th {
     .n1, .n2, .n3, .n4, .n5, .n6, .n7, .n8, .n9, .n10, .out {
         font-weight:            normal;
     }
-    
-
-
 }
 
+@media screen and (max-width:500px) {
+    #lbmain {
+        display:                none;
+    }
+    
+    
+}
