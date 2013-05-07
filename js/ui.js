@@ -179,9 +179,11 @@ $(document).ready(
             if (currUrl === null) {
             	currUrl = location.search;
             }
-            console.log(currUrl);
-            nav(currUrl);
-        }
+            //console.log(currUrl);
+            if (currUrl) {
+                nav(currUrl);
+            }
+        };
     
 
 });
