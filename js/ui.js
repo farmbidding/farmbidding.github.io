@@ -26,7 +26,8 @@ function refresh() {
         var abc = $.ajax({
             type: "GET",
             url: "http://media.teamnowhammies.com/auction3.php?callback=?",
-            dataType: "jsonp",
+            dataType: "script",
+            timeout:2000,
             crossDomain: true,
             jsonp: false,
             cache: false,
