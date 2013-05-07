@@ -89,6 +89,16 @@ function nav(url) {
 
 var loaded = false;
 
+var Browser = {
+  Version: function() {
+    var version = 999; // we assume a sane browser
+    if (navigator.appVersion.indexOf("MSIE") != -1)
+      // bah, IE again, lets downgrade version number
+      version = parseFloat(navigator.appVersion.split("MSIE")[1]);
+    return version;
+  }
+}
+
 $(document).ready(
     function() {        
         $('#refresh').click(refreshBoth);
@@ -109,7 +119,7 @@ $(document).ready(
                   //if (!$.browser.msie) {
                   //  window.history.pushState('object', 'New Title', url);
                   //}
-                    alert($.browser.version);
+                    alert(Browser.Version());
                   //This stops the browser from actually following the link
                   e.preventDefault();
               
