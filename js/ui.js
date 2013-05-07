@@ -1,7 +1,7 @@
 
 function refresh() {
     
-    $.getJSON('http://theycallmecarl.com/nwd2/auction2.php',
+    $.getJSON('http://theycallmecarl.com/nwd2/auction2.php&callback=?',
         function(data) {
         
             var html =  data.html;
@@ -57,33 +57,33 @@ function getURLParameter(name,str) {
 
 function nav(url) {
               
-              var param = getURLParameter("id",url);
-                       
-              var tgt = "main.html";
-              //console.log(param);
-              switch (param) {
-              	case "horses":
-              		tgt = "horses.html";
-              		break;
-              	case "verb":
-              		tgt = "verbance.html";
-              		break;
-              	case "paint":
-              		tgt = "paintball.html";
-              		break;
-              	default:
-              		tgt = "main.html";
-              		break;
-              }
+    var param = getURLParameter("id",url);
+           
+    var tgt = "main.html";
+    //console.log(param);
+    switch (param) {
+        case "horses":
+          tgt = "horses.html";
+          break;
+        case "verb":
+          tgt = "verbance.html";
+          break;
+        case "paint":
+          tgt = "paintball.html";
+          break;
+        default:
+          tgt = "main.html";
+          break;
+    }
               
-              //console.log(url);
-              var out = $("#content");
-              if (out) {
-              	out.load(tgt);
-                  
-            	}
-            	
-            	loaded = true;
+    //console.log(url);
+    var out = $("#content");
+    if (out) {
+      out.load(tgt);
+      
+    }
+    
+    loaded = true;
 
 }
 
@@ -118,12 +118,12 @@ $(document).ready(
         );
         
         window.onpopstate = function(event) {
-        	var currUrl = $(this).attr("href");
-        	if (currUrl == null) {
-        		currUrl = location.search;
-        	}
-        	console.log(currUrl);
-        	nav(currUrl);
+            var currUrl = $(this).attr("href");
+            if (currUrl === null) {
+            	currUrl = location.search;
+            }
+            console.log(currUrl);
+            nav(currUrl);
         }
     
 
