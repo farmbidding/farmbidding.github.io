@@ -41,65 +41,40 @@ function refresh() {
         
         
         );
-        /*
-        var abc = $.getJSON({
-            type: "GET",
-            url: "http://media.teamnowhammies.com/auction3.php&callback=?",
-            dataType: "script",
-            timeout:2000,
-            crossDomain: true,
-            jsonp: false,
-            cache: false,
-            jsonpCallback: 'cb',
-            success: function(data) {
-                if (data) {
-                    var html =  data.html;
-                    
-                    html = html + "<br/>Updated " + getTime();
-                    $("#leaderboard").html(html);  
-                }
-                
-                
-            }
-        });
-        */
-        
-
-        
-        var error = false;
-    
-        abc.error(function (data, xhr, dat1) {
-            error = true;
-        });
-    
-        abc.complete(function (xhr, status) {
-            if (!error){
-                var data = xhr.responseText;
-                var html =  data.html;
-                
-                html = html + "<br/>Updated " + getTime();
-                $("#leaderboard").html(html);    
-            }
-            
-        });
-
-    
-        abc.done(function(data){
-           //alert(data.people[0].nameFirst); ?????  
-           //alert("done");
-        });     
     }
 }
 
 function refreshSH() {
     //'http://theycallmecarl.com/nwd2/shallowhill.php'
-    $.getJSON('http://theycallmecarl.com/nwd2/shallowhill.php',
+/*    $.getJSON('http://theycallmecarl.com/nwd2/shallowhill.php',
         function(data) {
         
             var html =  data.html;
             
             $("#shslots").html(html);	
-        });
+        });*/
+        
+        
+    if ( Browser.Version() > 900) {
+        $.getJSON('http://theycallmecarl.com/nwd2/shallowhill.php',
+            function(data) {
+                if (data) {
+                    var html =  data.html;
+                    $("#shslots").html(html);    
+                }
+            });
+    } else {
+        $.getJSON("http://theycallmecarl.com/nwd2/shallowhill.php?callback=?", null,
+            function(data) {
+                if (data) {
+                    var html =  data.html;
+                    $("#shslots").html(html);  
+                }                
+            }
+        
+        
+        );
+    }        
 }
 
 
