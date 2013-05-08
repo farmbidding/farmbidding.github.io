@@ -25,7 +25,7 @@ function refresh() {
     } 
     
     if ( Browser.Version() > 900) {
-        $.getJSON('http://media.teamnowhammies.com/auction3.php',
+        $.getJSON('http://media.teamnowhammies.com/auction2.php',
             function(data) {
                     var html =  data.html;
                     
