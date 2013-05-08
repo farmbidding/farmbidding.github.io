@@ -263,12 +263,12 @@ th {
     background-color:       rgba(0,255,0,0.15);
 }
 
-.n5 {
+.n5, .n6, .n7, .n8 {
     background-color:       yellow;
     background-color:       rgba(255,255,0,0.15);
 }
 
-.n6, .n7, .n8, .n9, .n10, .out  {
+.n9, .n10, .out  {
     background-color:       red;
     background-color:       rgba(255,0,0,0.15);
 }
